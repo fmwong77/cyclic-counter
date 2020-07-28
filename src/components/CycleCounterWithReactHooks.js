@@ -9,7 +9,7 @@ const CycleCounterWithReactHooks = () => {
 				data-testid="cycle-counter"
 				style={{ fontSize: '1rem', width: 120, height: 30 }}
 				onClick={() => {
-					setCounter((counter) => counter + 1);
+					setCounter((counter) => (counter > 3 ? 0 : counter + 1));
 				}}
 			>
 				{counter}
