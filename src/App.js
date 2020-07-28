@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import CycleCounter from './components/CycleCounterWithReactHooks';
+import CycleCounter from './components/CycleCounter';
 
 class App extends Component {
 	render() {

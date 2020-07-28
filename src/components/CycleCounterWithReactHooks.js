@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 
-const CycleCounterWithReactHooks = () => {
+const CycleCounterWithReactHooks = ({ cycle }) => {
 	const [counter, setCounter] = useState(0);
+	console.log(cycle);
+
+	const handleClick = (e) => {
+		// e.preventDefault();
+		setCounter((counter) => (counter + 1 >= cycle ? 0 : counter + 1));
+	};
 
 	return (
 		<React.Fragment>
@@ -9,7 +15,7 @@ const CycleCounterWithReactHooks = () => {
 				data-testid="cycle-counter"
 				style={{ fontSize: '1rem', width: 120, height: 30 }}
 				onClick={() => {
-					setCounter((counter) => (counter > 2 ? 0 : counter + 1));
+					setCounter((counter) => (counter + 1 >= cycle ? 0 : counter + 1));
 				}}
 			>
 				{counter}

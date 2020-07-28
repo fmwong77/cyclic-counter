@@ -1,14 +1,21 @@
 import React from 'react';
 
 class CycleCounter extends React.Component {
-	constructor() {
-		super();
-		this.state = { counter: 0 };
+	constructor(props) {
+		super(props);
+		this.state = {
+			counter: 0,
+			cycle: this.props.cycle,
+		};
 	}
 
 	handleClick = () => {
-		console.log(this.state.counter);
-		this.setState({ counter: (this.state.counter += 1) });
+		this.setState({
+			counter:
+				this.state.counter + 1 >= this.state.cycle
+					? 0
+					: (this.state.counter += 1),
+		});
 	};
 
 	render() {
