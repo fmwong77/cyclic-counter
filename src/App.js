@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import CycleCounter from './components/CycleCounter';
+import CycleCounter from './components/CycleCounterWithReactHooks';
 
 class App extends Component {
-  render() {
-    const { cycle } = this.props;
-    return (
-      <div className="App">
-        <CycleCounter cycle={cycle} />
-      </div>
-    );
-  }
+	render() {
+		const { cycle } = this.props;
+		return (
+			<div className="App">
+				<CycleCounter cycle={cycle} />
+			</div>
+		);
+	}
 }
 
 export default App;
